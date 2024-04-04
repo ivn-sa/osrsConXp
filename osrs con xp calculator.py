@@ -24,9 +24,7 @@ try:
                 plankType1 = 140
                 plankType2 = 346.12
             planksAmount = int(input("Amount of planks you have: "))
-        if planksAmount >= 1:
-            plank1 = (planksAmount - 1)
-            plank2 = 1
+        if planksAmount >= 0:
             if (planksAmount * plankType2) < xpNeeded:
                 print(f"You dont have enough planks for {round(xpNeeded):,} XP, you have {round(planksAmount * plankType2):,} XP if using "
                       f"mahogany homes, or {round(planksAmount * plankType1):,} XP if using regular construction.\nYou'll "
@@ -38,6 +36,8 @@ try:
                 print(
                     f"You have enough planks to do regular construction for the xp you need, you'll need {round((xpNeeded / plankType1) + 1):,} planks.")
             else:
+                plank1 = (planksAmount - 1)
+                plank2 = 1
                 print("\nYou have enough to get the xp needed if you also do some mahogany homes")
                 while True:
                     plank1 -= 1
